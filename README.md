@@ -59,3 +59,16 @@ The script outputs generated MAC addresses in the format XX:XX:XX:XX:XX:XX. If s
 ## Notes
 Ensure that any custom MAC prefix follows the format XX:XX:XX with valid hexadecimal values.
 The script validates input and handles errors for invalid choices or formats.
+
+You can adjust the defaults, or add new ones by adjusting the following code;
+
+````
+# Hypervisor-specific MAC prefixes with brief descriptions
+MAC_PREFIXES = {
+    "Xen": ([0x00, 0x16, 0x3e], "Xen virtual machine"),
+    "VMware": ([0x00, 0x50, 0x56], "VMware virtual machine"),
+    "Hyper-V": ([0x00, 0x15, 0x5d], "Microsoft Hyper-V virtual machine"),
+    "VirtualBox": ([0x08, 0x00, 0x27], "Oracle VirtualBox virtual machine"),
+    "KVM/QEMU": ([0x52, 0x54, 0x00], "KVM/QEMU virtual machine")
+}
+```
